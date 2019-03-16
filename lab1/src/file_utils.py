@@ -10,7 +10,7 @@ def read_file(filename):
 def get_all_filenames():
     filenames = listdir('data')
     filenames.remove('.gitkeep')
-    return ["1993_599.txt"]
+    return ["1993_602.txt"]
 
 
 def get_data():

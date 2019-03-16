@@ -5,4 +5,6 @@ from src.file_utils import get_data, pprint
 
 if __name__ == "__main__":
     data = get_data()
-    print(find_external_references(data))
+    x = find_external_references(data)
+    for _x in x[0]:
+        print(_x)
