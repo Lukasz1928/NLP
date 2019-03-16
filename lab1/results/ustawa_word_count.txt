@@ -1,0 +1,11 @@
+Total count of all forms of 'ustawa' word: 25092
+Total count of inflected forms of 'ustawa' word:
+	ustawie: 5499
+	ustawom: 12
+	ustaw¹: 1125
+	ustawami: 76
+	ustaw: 909
+	ustawy: 13205
+	ustawach: 178
+	ustawê: 843
+	ustawa: 3245
