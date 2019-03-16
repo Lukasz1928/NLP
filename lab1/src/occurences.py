@@ -1,7 +1,7 @@
 import regex
 
 
-def count_ustawa_occurrences(data, filename="occurences"):
+def count_ustawa_occurrences(data, filename):
     text = merge_data(data)
     search_regex = r'(\b[Uu][Ss][Tt][Aa][Ww]([Aa]|[Aa][Cc][Hh]|[Aa][Mm][Ii]|[Ąą]|[Ęę]|[Ii][Ee]|[Oo][Mm]|[Oo]|[Yy])?\b)'
     occurrences = regex.findall(search_regex, text)
@@ -21,7 +21,7 @@ def merge_data(data):
 
 
 def save_result(all_count, inflected_count, filename):
-    with open("results/{}.txt".format(filename), "w") as f:
+    with open("results/{}.txt".format(filename), "w", encoding='utf-8') as f:
         f.write("Total count of all forms of 'ustawa' word: {}\n".format(all_count))
         f.write("Total count of inflected forms of 'ustawa' word:\n")
         for uo in inflected_count:
