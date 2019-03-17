@@ -19,10 +19,3 @@ def get_data():
     for filename in filenames:
         data.append(read_file(filename))
     return data
-
-
-def pprint(data):
-    print('[')
-    for d in data:
-        print("\n{}".format(d))
-    print(']')
