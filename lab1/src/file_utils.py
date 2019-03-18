@@ -14,8 +14,8 @@ def get_all_filenames():
 
 
 def get_data():
-    data = []
+    data = {}
     filenames = get_all_filenames()
     for filename in filenames:
-        data.append(read_file(filename))
+        data[filename] = read_file(filename)
     return data
