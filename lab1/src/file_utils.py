@@ -1,3 +1,4 @@
+import regex
 from os import listdir
 
 
@@ -17,5 +18,5 @@ def get_data():
     data = {}
     filenames = get_all_filenames()
     for filename in filenames:
-        data[filename] = read_file(filename)
+        data[filename] = regex.sub('\xa0', ' ', read_file(filename))
     return data

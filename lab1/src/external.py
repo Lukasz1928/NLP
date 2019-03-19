@@ -8,7 +8,6 @@ def find_external_references(data, filename):
             references.extend(find_external_in_single_file(data[k]))
         except TypeError:
             pass # file in incorrect format
-
     aggregated = aggregate_results(references)
     dec_keys = sorted(aggregated.keys(), key=lambda x : aggregated[x]['count'], reverse=True)
     with open('results/{}.txt'.format(filename), "w") as file:
@@ -35,11 +34,14 @@ def find_external_in_single_file(text):
     title_regex = r'(?P<title>(\s*(\bo\b)|-)\s*(\w|\s)*?)(?=\s*\()'
     journal_regex = r'\(\s*[Dd]z\.\s*U.\s+(?P<journal_details>(.|\s)*?)\)'
 
-    journal_year_groups_regex = r'((z\s+(?P<journal_year>\d{4})\s+r.\s+)?(?P<numbers>(([Nn]r\s+\d+,(\s*(poz\.)?\s*\d+\s*(,|i|oraz|$)\s*)+))+))'
-    journal_numbers_regex = r'[Nn]r\s+(?P<number>\d+),\s*(?P<positions>((poz\.)?\s*\d+\s*(i|,|oraz|$)?)+)'
+    journal_year_groups_regex = \
+        r'((z\s+(?P<journal_year>\d{4})\s+r.\s+)?(?P<numbers>(([Nn]r\s+\d+,(\s*(poz\.)?\s*\d+\s*(,|i|oraz|$)\s*)+))+))'
+    journal_numbers_regex = \
+        r'[Nn]r\s+(?P<number>\d+),\s*(?P<positions>((poz\.)?\s*\d+(?!=\s*r\.)\s*(i|,|oraz|$|\s)*?)+)'
     journal_position_regex = r'(poz.)?\s*(?P<position>\d+)'
 
-    reference_regex = r'(\b[Uu]staw.+\s+({})\s*({})\s*({}))|(w\s+Dz\.\s*U\.\s+((?P<journals>(.|\s)*?\d)(?=\.)))'.format(date_regex, title_regex, journal_regex)
+    reference_regex = r'(\b[Uu]staw.+\s+({})\s*({})\s*({}))|(w\s+Dz\.\s*U\.\s+((?P<journals>(.|\s)*?\d)(?=\.)))'\
+                      .format(date_regex, title_regex, journal_regex)
 
     references = []
     for ref in regex.finditer(reference_regex, text, regex.MULTILINE):
@@ -48,6 +50,8 @@ def find_external_in_single_file(text):
             ref_data['journals'] = []
             for year_group in regex.finditer(journal_year_groups_regex, ref.group('journals'), regex.MULTILINE):
                 year = year_group.group('journal_year')
+                if year is None:
+                    continue
                 for number_group in regex.finditer(journal_numbers_regex, year_group.group('numbers'), regex.MULTILINE):
                     number = number_group.group('number')
                     for position_group in regex.finditer(journal_position_regex, number_group.group('positions'), regex.MULTILINE):
