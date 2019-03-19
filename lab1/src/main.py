@@ -7,5 +7,4 @@ from src.occurences import count_ustawa_occurrences
 if __name__ == "__main__":
     data = get_data()
     find_external_references(data, "external_references")
-    # find_internal_references(data, "internal_references")
-    # count_ustawa_occurrences(data, "ustawa_word_count")
+    count_ustawa_occurrences(data, "ustawa_word_count")
