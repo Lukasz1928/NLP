@@ -108,3 +108,4 @@ venv.bak/
 
 # data files
 lab1/data/*.txt
+elasticsearch/*
