@@ -106,6 +106,9 @@ venv.bak/
 
 .idea/
 
-# data files
+######## data files ######### 
+# lab1
 lab1/data/*.txt
+# lab2
 elasticsearch/*
+lab2/data/*.txt
