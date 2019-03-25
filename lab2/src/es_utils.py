@@ -7,7 +7,7 @@ def create_index(es, index_name):
         'settings': {
             'analysis': {
                 'filter': {
-                    'myfilter': {
+                    'synonym': {
                         'type': 'synonym',
                         'synonyms': [
                             "kpk => kodeks postępowania karnego",
@@ -18,8 +18,9 @@ def create_index(es, index_name):
                 },
                 'analyzer': {
                     'myanalyzer': {
+                        'type': 'custom',
                         'tokenizer': 'standard',
-                        'filter': ['myfilter', 'lowercase']
+                        'filter': ['lowercase', 'synonym', 'morfologik_stem'],
                     }
                 }
             },
@@ -27,9 +28,9 @@ def create_index(es, index_name):
         'mappings': {
             'doc': {
                 'properties': {
-                    'content': {
+                    'text': {
                         'type': 'text',
-                        'analyzer': 'morfologik'
+                        'analyzer': 'myanalyzer'
                     }
                 }
             }
@@ -44,8 +45,9 @@ def create_index(es, index_name):
 
 def load_data(es, index_name):
     data = get_data()
-    for i, k in enumerate(data.keys()):
-        es.create(index_name, doc_type='doc', id=i, body={'content': data[k]})
+    for k, v in data.items():
+        es.create(index_name, doc_type='doc', id=k, body={'text': v})
+    es.indices.refresh(index_name)
 
 
 def clean_up(es, index_name):

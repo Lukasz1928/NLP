@@ -1,3 +1,6 @@
+import re
+
+import regex
 from os import listdir
 
 
