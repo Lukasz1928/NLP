@@ -60,7 +60,6 @@ def find_documents_most_relevant_for_konstytucja(es, index_name):
         }
     }
     ret = es.search(index=index_name, doc_type='doc', body=search_body)
-    print(ret)
     hits = ret['hits']['hits']
     return [h['_id'] for h in hits]
 
@@ -105,14 +104,13 @@ def solve_tasks(es, index_name, output_name):
                 f.write('\t\t\'{}\'\n'.format(t))
 
 
-
 def main():
     index_name = 'idx'
     es = elasticsearch.Elasticsearch([{'host': 'localhost', 'port': 9200}])
-    #create_index(es, index_name)
-    #load_data(es, index_name)
+    create_index(es, index_name)
+    load_data(es, index_name)
     solve_tasks(es, index_name, "result")
-    #clean_up(es, index_name)
+    clean_up(es, index_name)
 
 
 if __name__ == "__main__":
