@@ -1,7 +1,8 @@
+from elasticsearch import Elasticsearch
 
 
 def main():
-    print('main')
+    es = Elasticsearch({'host': 'localhost', 'port': 9200})
 
 
 if __name__ == "__main__":
