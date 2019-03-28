@@ -4,13 +4,27 @@ from src.file_utils import get_data
 
 def create_index(es, index_name):
     index = {
-        'settings': {
-            'analysis': {
-                'analyzer': {
-                    'myanalyzer': {
-                        'type': 'custom',
-                        'tokenizer': 'standard',
-                        'filter': ['lowercase', 'synonym', 'morfologik_stem'],
+        "mappings": {
+            "doc": {
+                "properties": {
+                    "text": {
+                        "type": "text",
+                        "term_vector": "yes",
+                        "store": 'true',
+                        "analyzer": "myanalyzer"
+                    }
+                }
+            }
+        },
+        "settings": {
+            "analysis": {
+                "analyzer": {
+                    "myanalyzer": {
+                        "type": "custom",
+                        "tokenizer": "standard",
+                        "filter": [
+                            "lowercase"
+                        ]
                     }
                 }
             }
