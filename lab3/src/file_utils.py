@@ -10,6 +10,7 @@ def read_file(filename):
 def get_all_filenames():
     filenames = listdir('data')
     filenames.remove('.gitkeep')
+    filenames.remove('polimorfologik.txt')
     return filenames
 
 
@@ -19,3 +20,14 @@ def get_data():
     for filename in filenames:
         data[filename] = read_file(filename)
     return data
+
+
+def read_polimorfologik():
+    words = []
+    with open('data/polimorfologik.txt', 'r', encoding='utf-8') as file:
+        words.append(file.readline().split(';')[1])
+    return words
+
+
+def save_results(words_not_in_dict, top_words_not_in_dict, words_not_in_dict_with_3_occurences, corrections):
+    pass
