@@ -23,11 +23,22 @@ def get_data():
 
 
 def read_polimorfologik():
-    words = []
+    words = set()
     with open('data/polimorfologik.txt', 'r', encoding='utf-8') as file:
-        words.append(file.readline().split(';')[1])
+        for line in file:
+            words.add(line.split(';')[1])
     return words
 
 
 def save_results(words_not_in_dict, top_words_not_in_dict, words_not_in_dict_with_3_occurences, corrections):
-    pass
+    with open('results/words_not_in_dictionary.txt', 'w', encoding='utf-8') as f:
+        f.write('Words not found in dictionary:\n')
+        for w in words_not_in_dict:
+            f.write('\t{}\n'.format(w))
+    with open('results/results.txt', 'w', encoding='utf-8') as f:
+        f.write('Top 30 words not found in dictionary:\n')
+        for w in top_words_not_in_dict:
+            f.write('\t{}\n'.format(w))
+        f.write('\nTop 30 words with 3 occurences not found in dictionary:\n')
+        for w in words_not_in_dict_with_3_occurences:
+            f.write('\t{}\n'.format(w))

@@ -1,5 +1,3 @@
-import numpy as np
-
 from elasticsearch import Elasticsearch
 from src.es_utils import create_index, load_data
 from src.file_utils import get_all_filenames, read_polimorfologik, save_results
@@ -21,7 +19,7 @@ def aggregate_terms(terms):
     for w in words.keys():
         if len(w) > 1 and w.isalpha():
             freqs.append((w, words[w]))
-    return freqs
+    return sorted(freqs, key=lambda x: x[1], reverse=True)
 
 
 def get_term_vectors(es, index_name):
@@ -35,8 +33,7 @@ def get_term_vectors(es, index_name):
 
 def plot_frequencies(freqs):
     xs = [x + 1 for x in range(len(freqs))]
-    sorted_frequencies = sorted(freqs, key=lambda x: x[1], reverse=True)
-    ys = [sorted_frequencies[i][1] for i in range(len(xs))]
+    ys = [freqs[i][1] for i in range(len(xs))]
     plt.plot(xs, ys, '.')
     plt.xlabel('word rank')
     plt.ylabel('word appearances')
@@ -56,10 +53,7 @@ def levenshtein_distance(s1, s2):
         d[0][i] = i
     for i in range(1, m):
         for j in range(1, n):
-            if s1[i - 1] == s2[j - 1]:
-                cost = 0
-            else:
-                cost = 1
+            cost = 0 if s1[i - 1] == s2[j - 1] else 1
             d[i][j] = min([d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost])
     return d[m - 1][n - 1]
 
@@ -77,7 +71,7 @@ def find_top_words_not_in_dictionary(words):
 
 
 def find_top_words_not_in_dictionary_with_3_occurences(words):
-    return filter(lambda w: w[1] == 30, words)[:30]
+    return [w for w in words if w[1] == 3][:30]
 
 
 def find_most_probable_corrections(words, frequencies):
@@ -96,7 +90,7 @@ def main():
     plot_frequencies(agg)
     words_not_in_dict = find_words_not_in_dictionary(agg, pm)
     top_words_not_in_dict = find_top_words_not_in_dictionary(words_not_in_dict)
-    words_not_in_dict_with_3_occurences = find_top_words_not_in_dictionary(words_not_in_dict)
+    words_not_in_dict_with_3_occurences = find_top_words_not_in_dictionary_with_3_occurences(words_not_in_dict)
     corrections = find_most_probable_corrections(top_words_not_in_dict, agg)
 
     save_results(words_not_in_dict, top_words_not_in_dict, words_not_in_dict_with_3_occurences, corrections)

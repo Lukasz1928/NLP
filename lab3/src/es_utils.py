@@ -10,21 +10,7 @@ def create_index(es, index_name):
                     "text": {
                         "type": "text",
                         "term_vector": "yes",
-                        "store": 'true',
-                        "analyzer": "myanalyzer"
-                    }
-                }
-            }
-        },
-        "settings": {
-            "analysis": {
-                "analyzer": {
-                    "myanalyzer": {
-                        "type": "custom",
-                        "tokenizer": "standard",
-                        "filter": [
-                            "lowercase"
-                        ]
+                        "store": 'true'
                     }
                 }
             }
