@@ -1,7 +1,6 @@
 Top 30 words not found in dictionary:
 	('margin', 1111)
 	('późn', 1080)
-	('ue', 591)
 	('family', 543)
 	('text', 531)
 	('mso', 448)
@@ -12,52 +11,85 @@ Top 30 words not found in dictionary:
 	('gmo', 298)
 	('times', 296)
 	('iv', 272)
-	('pkp', 272)
 	('sa', 266)
 	('name', 254)
 	('size', 248)
-	('ewg', 235)
 	('left', 233)
 	('right', 233)
 	('sww', 227)
-	('nbp', 214)
-	('efta', 204)
 	('skw', 196)
 	('ex', 169)
 	('height', 168)
 	('line', 168)
 	('ike', 162)
 	('vi', 154)
-	('polsce', 150)
+	('indent', 121)
+	('remediacji', 120)
+	('vii', 111)
+	('ure', 103)
+	('uke', 97)
+	('kn', 95)
 
 Top 30 words with 3 occurences not found in dictionary:
 	('zacją', 3)
 	('zania', 3)
 	('ixa', 3)
-	('koszalinie', 3)
-	('białymstoku', 3)
 	('gemeinschaft', 3)
-	('pabianice', 3)
-	('beliny', 3)
-	('czechowskiego', 3)
-	('boguszów', 3)
-	('gorzów', 3)
-	('sieradz', 3)
-	('nkwd', 3)
-	('uop', 3)
 	('zasiedleń', 3)
 	('ia', 3)
 	('cych', 3)
 	('instrumentalistyki', 3)
-	('władysława', 3)
 	('zbywczej', 3)
 	('zbywczą', 3)
-	('estonii', 3)
-	('mysłowice', 3)
-	('siemianowice', 3)
-	('sopot', 3)
-	('tychy', 3)
-	('zabrze', 3)
-	('świętochłowice', 3)
 	('świad', 3)
-	('wierzbica', 3)
+	('betania', 3)
+	('elim', 3)
+	('międzykościelnych', 3)
+	('brucellosis', 3)
+	('caprine', 3)
+	('cattles', 3)
+	('haematopoietic', 3)
+	('highly', 3)
+	('necrosis', 3)
+	('pigs', 3)
+	('pox', 3)
+	('salmonellosis', 3)
+	('salmonelozy', 3)
+	('septicaemia', 3)
+	('sheep', 3)
+	('tuberculosis', 3)
+	('ności', 3)
+	('publicz', 3)
+	('rytorialnego', 3)
+
+Word corrections:
+	zacją -> racją
+	zania -> zdania
+	ixa -> ina
+	gemeinschaft -> geminacjami
+	zasiedleń -> zasiedzeń
+	ia -> na
+	cych -> tych
+	instrumentalistyki -> instrumentalistki
+	zbywczej -> zbawczej
+	zbywczą -> zbywcą
+	świad -> zwiad
+	betania -> bretania
+	elim -> eli
+	międzykościelnych -> międzyokiennych
+	brucellosis -> brucelozie
+	caprine -> caprie
+	cattles -> seattle
+	haematopoietic -> hematopoezie
+	highly -> highway
+	necrosis -> naprosi
+	pigs -> pius
+	pox -> poz
+	salmonellosis -> salmonellozie
+	salmonelozy -> salmonellozy
+	septicaemia -> epidemia
+	sheep -> sleep
+	tuberculosis -> tuberkulozie
+	ności -> kości
+	publicz -> publice
+	rytorialnego -> terytorialnego

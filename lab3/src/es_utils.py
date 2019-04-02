@@ -4,6 +4,11 @@ from src.file_utils import get_data
 
 def create_index(es, index_name):
     index = {
+        "settings": {
+            "analysis": {
+                "filter": ["lowercase"]
+            }
+        },
         "mappings": {
             "doc": {
                 "properties": {
