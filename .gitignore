@@ -114,3 +114,5 @@ lab1/data/*.txt
 lab2/data/*.txt
 # lab3
 lab3/data/*.txt
+# lab4
+lab4/data/*.txt
