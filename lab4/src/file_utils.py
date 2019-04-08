@@ -10,7 +10,6 @@ def read_file(filename):
 def get_all_filenames():
     filenames = listdir('data')
     filenames.remove('.gitkeep')
-    filenames.remove('polimorfologik.txt')
     return filenames
 
 

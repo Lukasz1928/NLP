@@ -1,6 +1,5 @@
 from src.external import find_external_references
 from src.file_utils import get_data
-from src.internal import find_internal_references
 from src.occurences import count_ustawa_occurrences
 
 

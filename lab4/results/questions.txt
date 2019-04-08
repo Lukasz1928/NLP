@@ -1,0 +1,21 @@
+1. Which measure works better for the problem?
+    LLR works much better. The number of occurences of given bigram seems to be an important factor in LLR while it
+    does not affect PMI. Top results based on PMI are mostly phrases that appear only once in text which words are also
+    rare.
+
+2. What would be needed, besides good measure, to build a dictionary of multiword expressions?
+    1) A big text corpus.
+    2) Good preprocessing of given corpus:
+        a) removal of abbreviations(e.g. change ('dz', 'u') to ('dziennik', 'ustaw'))
+        b) removal of line splitting inside words(e.g. ('budo', 'wnictwa') are not separate words)
+        c) lemmatization(eg. ('o', 'których') and ('o', 'którym') could be treated as the same bigram)
+        d) removal of words connected with removed parts of text(e.g. should r. be removed from
+            'Dz.U. z 1993 r. Nr 90, poz. 416' when removing '1993'?)?
+    3) Computational power.
+
+3. Can you identify a certain threshold which clearly divides the good expressions from the bad?
+    1) PMI - good expressions are mixed with bad ones so it's difficult to find any threshold
+        which divides the list.
+    2) LLR -  it's impossible to give a concrete value, because a steady decrease of bigrams quality is clearly visible.
+        When only really strong collocations are required I'd choose value of about 200, while in a more standard case
+        threshold of about 30 seems to be a good choice.

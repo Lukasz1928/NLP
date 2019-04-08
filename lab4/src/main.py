@@ -5,7 +5,7 @@ import nltk
 
 
 def prepare_text(text):
-    text = regex.sub(r'[()?!.,:;\"\'\[\]\}\{\-_+=*&^%$#@|]', ' ', text) # ???
+    text = regex.sub(r'[()?!.,:;\"\'\[\]\}\{\-_+=*&^%$#@|]', ' ', text)
     text = regex.sub(r'\s+', ' ', text)
     text = text.lower()
     return text
@@ -71,6 +71,7 @@ def calculate_LLR(unigrams, bigrams):
 def main():
     data = get_data()
     unigrams, bigrams = calculate_unigrams_and_bigrams(data.values())
+
     pmis = calculate_PMI(unigrams, bigrams)
     sorted_pmis = sorted([(k, v) for (k, v) in pmis.items()], key=lambda x: x[1], reverse=True)[:30]
 
