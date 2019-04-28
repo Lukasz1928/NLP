@@ -1,0 +1,23 @@
+{
+    "('szkoda', 1)": {
+        "synonyms": [],
+        "meaning": "ziemia w gospodarstwie zniszczona przez zwierz\u0119ta"
+    },
+    "('szkoda', 2)": {
+        "synonyms": [
+            [
+                "strata",
+                1
+            ],
+            [
+                "utrata",
+                1
+            ],
+            [
+                "uszczerbek",
+                1
+            ]
+        ],
+        "meaning": null
+    }
+}
