@@ -1,7 +1,5 @@
 import json
-
 import requests
-
 from src.utils import get_url
 
 
