@@ -2,7 +2,6 @@ import regex
 
 import requests
 import networkx
-from networkx.drawing.nx_agraph import graphviz_layout
 
 from src.utils import get_url
 import matplotlib.pyplot as plt

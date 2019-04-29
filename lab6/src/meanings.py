@@ -9,11 +9,14 @@ def save(synonyms):
         f.write(json.dumps(syns, indent=2, ensure_ascii=False))
 
 
-def get_searched_noun_ids(word):
+def get_searched_noun_ids(word, word_id=None):
     words = requests.get(get_url('lexemes/{}'.format(word))).json()
     searched_noun_sense = [w['sense_id'] for w in words if w['part_of_speech'] == 'noun_pl' and w['lemma'] == word][0]
     senses = requests.get(get_url('senses/{}'.format(searched_noun_sense))).json()
-    ids = [w['id'] for w in senses['homographs'] if w['part_of_speech'] == 'noun_pl']
+    if word_id is None:
+        ids = [w['id'] for w in senses['homographs'] if w['part_of_speech'] == 'noun_pl']
+    else:
+        ids = [w['id'] for w in senses['homographs'] if w['part_of_speech'] == 'noun_pl' and w['sense_index'] == word_id]
     return ids
 
 

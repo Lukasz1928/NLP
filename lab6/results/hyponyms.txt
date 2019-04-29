@@ -1,0 +1,12 @@
+Direct hyponyms of ('wypadek', 1) word:
+	('zderzenie', 2)
+	('kolizja', 2)
+	('karambol', 1)
+	('zawał', 2)
+	('tąpnięcie', 1)
+	('kapotaż', 1)
+	('wykolejenie', 2)
+	('zakrztuszenie', 1)
+	('wypadek komunikacyjny', 1)
+	('katastrofa budowlana', 1)
+	('wypadek jądrowy', 1)
