@@ -5,7 +5,7 @@ from src.utils import get_url
 
 def save(synonyms):
     syns = {str(k): v for k, v in synonyms.items()}
-    with open('results/meanings.json', 'w', encoding='utf-8') as f:
+    with open('results/meanings.json', 'w+', encoding='utf-8') as f:
         f.write(json.dumps(syns, indent=2, ensure_ascii=False))
 
 
