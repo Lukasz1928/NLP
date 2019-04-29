@@ -1,23 +1,23 @@
 {
-    "('szkoda', 1)": {
-        "synonyms": [],
-        "meaning": "ziemia w gospodarstwie zniszczona przez zwierz\u0119ta"
-    },
-    "('szkoda', 2)": {
-        "synonyms": [
-            [
-                "strata",
-                1
-            ],
-            [
-                "utrata",
-                1
-            ],
-            [
-                "uszczerbek",
-                1
-            ]
-        ],
-        "meaning": null
-    }
+  "('szkoda', 1)": {
+    "definition": "miejsce w polu lub ogrodzie, gdzie zwierzęta (np. drób, bydło) zniszczyły plony",
+    "synonyms": []
+  },
+  "('szkoda', 2)": {
+    "definition": null,
+    "synonyms": [
+      [
+        "strata",
+        1
+      ],
+      [
+        "utrata",
+        1
+      ],
+      [
+        "uszczerbek",
+        1
+      ]
+    ]
+  }
 }

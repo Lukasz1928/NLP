@@ -1,6 +1,6 @@
 
 
-BASE_URL = 'http://api.slowosiec.clarin-pl.eu:80/plwordnet-api/'
+BASE_URL = 'http://plwordnet.pwr.wroc.pl/wordnet/api/'
 
 
 def get_url(ep):
