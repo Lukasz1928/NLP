@@ -1,0 +1,79 @@
+{
+  "sąd wysoki": [
+    "niski::adj",
+    "sędzia::noun",
+    "bowiem::conj",
+    "ne#Mary_Ryan::noun",
+    "zaś::conj"
+  ],
+  "trybunał konstytucyjny": [
+    "władza_sądownicza::noun",
+    "parlament::noun",
+    "konstytucja::noun",
+    "ne#Trybunału::noun",
+    "bunałem::adj"
+  ],
+  "kodeks cywilny": [
+    "przepis::noun",
+    "prawny::adj",
+    "busido::noun",
+    "ne#Kodeksy::noun",
+    "cywiln::noun"
+  ],
+  "kpk": [
+    "ne#Kodeksu_postępowania_karnego::noun",
+    "kpk::adj",
+    "kpc::noun",
+    "kk::noun",
+    "ppsa::noun"
+  ],
+  "sąd rejonowy": [
+    "sąd_okręgowy::noun",
+    "trybunał::noun",
+    "okręgowy::adj",
+    "sąd_apelacyjny::noun",
+    "asesoria::noun"
+  ],
+  "szkoda": [
+    "wyrządzić::verb",
+    "Krzywda::noun",
+    "strata::noun",
+    "nieszczęście::noun",
+    "obawiać_się::verb"
+  ],
+  "wypadek": [
+    "przypadek::noun",
+    "okoliczność::noun",
+    "skutek::noun",
+    "sytuacja::noun",
+    "zdarzenie::noun"
+  ],
+  "kolizja": [
+    "kolizja_drogowa::noun",
+    "kolizj::noun",
+    "wypadek_drogowy::noun",
+    "zderzenie::noun",
+    "zderzenie_czołowe::noun"
+  ],
+  "szkoda majątkowy": [
+    "wyrządzo::noun",
+    "majątek::noun",
+    "ne#interesom_Państwa_Polskiego::noun",
+    "dowawczej::adj",
+    "biercy::noun"
+  ],
+  "nieszczęście": [
+    "niebezpieczeństwo::noun",
+    "klęska::noun",
+    "zguba::noun",
+    "zgryzota::noun",
+    "Krzywda::noun"
+  ],
+  "rozwód": [
+    "małżeństwo::noun",
+    "rozwodowy::adj",
+    "rozwiedziony::adj",
+    "rozwieść_się::verb",
+    "rozwieść::verb"
+  ]
+}

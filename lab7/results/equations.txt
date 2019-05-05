@@ -1,0 +1,20 @@
+sąd wysoki - kpc + konstytucja:
+rząd::noun
+niski::adj
+władza::noun
+urząd::noun
+stanowisko::noun
+
+pasażer - mężczyzna + kobieta:
+podróżny::noun
+współpasażer::noun
+podróżujący::noun
+kierowca::noun
+bagażowy::noun
+
+samochód - droga + rzeka:
+motorówka::noun
+jezioro::noun
+Łódź::noun
+ne#Helensburgha::noun
+ne#East_River::noun
