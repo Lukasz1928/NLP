@@ -62,15 +62,16 @@ def find_vector(model, word):
 
 
 def find_projection(model):
-    words = ['szkoda::noun', 'strata::noun', 'szkoda_majątkowa::noun',
+    words = ['szkoda::noun', 'strata::noun', 'uszczerbek::noun', 'szkoda_majątkowa::noun',
              'uszczerbek_na_zdrowie::noun', 'krzywda::noun',
              'niesprawiedliwość::noun', 'nieszczęście::noun']
     random_vectors = random.sample([model[k] for k in model.vocab.keys()], k=1000)
     words_vectors = [x for x in [find_vector(model, x) for x in words] if x is not None]
 
-    projection = TSNE(n_components=2).fit_transform(random_vectors + words_vectors)
+    projection = TSNE(n_components=2).fit_transform(words_vectors + random_vectors)
     plt.scatter(x=[x[0] for x in projection][len(words_vectors):], y=[x[1] for x in projection][len(words_vectors):], c='green', label='random words')
     plt.scatter(x=[x[0] for x in projection][0:len(words_vectors)], y=[x[1] for x in projection][0:len(words_vectors)], c='red', label='given words')
+    plt.legend(loc='best')
     plt.savefig('results/projection.png')
 
 
