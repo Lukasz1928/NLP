@@ -122,3 +122,5 @@ lab5/data/*.txt
 # no data
 # lab7
 lab7/data/*.txt
+# lab8
+lab8/data/*.txt
