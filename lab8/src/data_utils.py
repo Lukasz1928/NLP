@@ -59,5 +59,5 @@ def split_test_train_validation(files):
 
 
 def get_random_lines(text, size, percentage=False):
-    lines = [l for l in text.split('\n') if len(l) > 15]
+    lines = [x for x in [regex.sub(r'\s+', ' ', l) for l in text.split('\n')] if len(x) > 30]
     return " ".join(random.sample(lines, k=min(len(lines), ceil(size / 100.0 * len(lines)) if percentage else size)))

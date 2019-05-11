@@ -1,5 +1,5 @@
 from src.data_utils import split_data, remove_titles, split_test_train_validation, get_random_lines
-from src.fasttext import fasttext_classify
+from src.fast_text import fasttext_classify
 from src.file_utils import get_data
 from src.results import Results
 from src.svm import svm_classify
@@ -12,7 +12,6 @@ def main():
     test, train, validation = split_test_train_validation(set(data.keys()))
 
     labels = {k: 1 if k in amending else 0 for k in data.keys()}
-
     full_text_documents = data
     tenth_of_text_documents = {k: get_random_lines(v, 10, percentage=True) for k, v in data.items()}
     ten_lines_documents = {k: get_random_lines(v, 10) for k, v in data.items()}

@@ -1,5 +1,8 @@
 import fasttext
+import os
+
 import regex
+from sklearn.metrics import precision_recall_fscore_support
 
 
 def save(results_full, results_tenth, results_ten, results_single, results):
@@ -20,7 +23,12 @@ def fasttext_classify(data_full, data_tenth, data_ten, data_single, labels, resu
 def save_training_file(data, labels):
     with open('training.txt', 'w+', encoding='utf-8') as f:
         for k in range(len(data)):
-            f.write('__label__{} {}\n'.format(labels[k], data[k]))
+            f.write('__label__{} {}\n'.format(labels[k], regex.sub(r'\n', ' ', data[k])))
+
+
+def remove_training_file():
+    os.remove('training.txt')
+    os.remove('model.bin')
 
 
 def classify(data, labels, test, train, validation):
@@ -37,6 +45,12 @@ def classify(data, labels, test, train, validation):
     validation_data = [data[k] for k in validation_data]
 
     save_training_file(train_data, train_labels)
-
-    cls = fasttext.supervised('training.txt', 'model')
-    predicted = cls.predict(test_data)
+    cls = fasttext.supervised('training.txt', 'model', lr_update_rate=200000, epoch=10, lr=0.3)
+    predicted = [int(x[0]) for x in cls.predict(test_data)]
+    remove_training_file()
+    precision, recall, f1, _ = precision_recall_fscore_support(test_labels, predicted, average='binary')
+    return {
+        'accuracy': float("{:.3f}".format(round(precision, 3))),
+        'recall': float("{:.3f}".format(round(recall, 3))),
+        'f1': float("{:.3f}".format(round(f1, 3)))
+    }
