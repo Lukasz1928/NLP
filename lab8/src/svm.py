@@ -38,7 +38,7 @@ def classify(data, labels, test, train, validation):
 
     cls = Pipeline([
         ('tfidf', TfidfVectorizer()),
-        ('clf', SGDClassifier(loss='hinge', penalty='l2',alpha=1e-3, random_state=42, max_iter=5, tol=None))])
+        ('clf', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, random_state=42, max_iter=10, tol=None))])
 
     cls.fit(train_data, train_labels)
     predicted = cls.predict(test_data)

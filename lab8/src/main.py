@@ -19,7 +19,7 @@ def main():
 
     r = Results()
 
-    #svm_classify(full_text_documents, tenth_of_text_documents, ten_lines_documents, single_line_documents, labels, r, test, train, validation)
+    svm_classify(full_text_documents, tenth_of_text_documents, ten_lines_documents, single_line_documents, labels, r, test, train, validation)
     fasttext_classify(full_text_documents, tenth_of_text_documents, ten_lines_documents, single_line_documents, labels, r, test, train, validation)
 
     r.save('results.json')
