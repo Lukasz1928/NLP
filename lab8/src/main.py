@@ -1,4 +1,5 @@
 from src.data_utils import split_data, remove_titles, split_test_train_validation, get_random_lines
+from src.fasttext import fasttext_classify
 from src.file_utils import get_data
 from src.results import Results
 from src.svm import svm_classify
@@ -19,7 +20,8 @@ def main():
 
     r = Results()
 
-    svm_classify(full_text_documents, tenth_of_text_documents, ten_lines_documents, single_line_documents, labels, r, test, train, validation)
+    #svm_classify(full_text_documents, tenth_of_text_documents, ten_lines_documents, single_line_documents, labels, r, test, train, validation)
+    fasttext_classify(full_text_documents, tenth_of_text_documents, ten_lines_documents, single_line_documents, labels, r, test, train, validation)
 
     r.save('results.json')
 
