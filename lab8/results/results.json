@@ -1,0 +1,68 @@
+{
+  "svm": {
+    "full_text": {
+      "accuracy": 0.884,
+      "recall": 0.949,
+      "f1": 0.915
+    },
+    "tenth_of_text": {
+      "accuracy": 0.752,
+      "recall": 0.868,
+      "f1": 0.805
+    },
+    "ten_lines_of_text": {
+      "accuracy": 0.751,
+      "recall": 0.934,
+      "f1": 0.833
+    },
+    "single_line_of_text": {
+      "accuracy": 0.633,
+      "recall": 0.838,
+      "f1": 0.722
+    }
+  },
+  "fasttext": {
+    "full_text": {
+      "accuracy": null,
+      "recall": null,
+      "f1": null
+    },
+    "tenth_of_text": {
+      "accuracy": null,
+      "recall": null,
+      "f1": null
+    },
+    "ten_lines_of_text": {
+      "accuracy": null,
+      "recall": null,
+      "f1": null
+    },
+    "single_line_of_text": {
+      "accuracy": null,
+      "recall": null,
+      "f1": null
+    }
+  },
+  "flair": {
+    "full_text": {
+      "accuracy": null,
+      "recall": null,
+      "f1": null
+    },
+    "tenth_of_text": {
+      "accuracy": null,
+      "recall": null,
+      "f1": null
+    },
+    "ten_lines_of_text": {
+      "accuracy": null,
+      "recall": null,
+      "f1": null
+    },
+    "single_line_of_text": {
+      "accuracy": null,
+      "recall": null,
+      "f1": null
+    }
+  }
+}

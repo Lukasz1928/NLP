@@ -1,7 +1,7 @@
 import random
 from math import ceil
 
-import regex as regex
+import regex
 
 
 def amends(title):
@@ -22,11 +22,12 @@ def remove_title(text):
         t, c = split_title(text)
         return c
     except ValueError:
-        return text
+        return None
 
 
 def remove_titles(data):
-    return {k: remove_title(v) for k, v in data.items()}
+    t = {k: remove_title(v) for k, v in data.items()}
+    return {k: v for k, v in t.items() if v is not None}
 
 
 def split_data(data):
@@ -59,4 +60,4 @@ def split_test_train_validation(files):
 
 def get_random_lines(text, size, percentage=False):
     lines = [l for l in text.split('\n') if len(l) > 15]
-    return random.sample(lines, k=ceil(size / 100.0 * len(lines)) if percentage else size)
+    return "\n".join(random.sample(lines, k=min(len(lines), ceil(size / 100.0 * len(lines)) if percentage else size)))
