@@ -41,8 +41,8 @@ def classify(data, labels, test, train, validation):
         ('clf', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, random_state=42, max_iter=10, tol=None))])
 
     cls.fit(train_data, train_labels)
-    predicted = cls.predict(test_data)
-    precision, recall, f1, _ = precision_recall_fscore_support(test_labels, predicted, average='binary')
+    predicted = cls.predict(validation_data)
+    precision, recall, f1, _ = precision_recall_fscore_support(validation_labels, predicted, average='binary')
     return {
         'accuracy': float("{:.3f}".format(round(precision, 3))),
         'recall': float("{:.3f}".format(round(recall, 3))),

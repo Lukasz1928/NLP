@@ -46,9 +46,9 @@ def classify(data, labels, test, train, validation):
 
     save_training_file(train_data, train_labels)
     cls = fasttext.supervised('training.txt', 'model', lr_update_rate=200000, epoch=10, lr=0.3)
-    predicted = [int(x[0]) for x in cls.predict(test_data)]
+    predicted = [int(x[0]) for x in cls.predict(validation_data)]
     remove_training_file()
-    precision, recall, f1, _ = precision_recall_fscore_support(test_labels, predicted, average='binary')
+    precision, recall, f1, _ = precision_recall_fscore_support(validation_labels, predicted, average='binary')
     return {
         'accuracy': float("{:.3f}".format(round(precision, 3))),
         'recall': float("{:.3f}".format(round(recall, 3))),
