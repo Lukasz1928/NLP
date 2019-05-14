@@ -1,6 +1,5 @@
 import fasttext
 import os
-
 import regex
 from sklearn.metrics import precision_recall_fscore_support
 

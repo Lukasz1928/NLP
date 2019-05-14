@@ -5,6 +5,7 @@ from sklearn.feature_extraction.text import TfidfTransformer, TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import precision_recall_fscore_support
+from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 
 
@@ -39,7 +40,6 @@ def classify(data, labels, test, train, validation):
     cls = Pipeline([
         ('tfidf', TfidfVectorizer()),
         ('clf', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, random_state=42, max_iter=10, tol=None))])
-
     cls.fit(train_data, train_labels)
     predicted = cls.predict(validation_data)
     precision, recall, f1, _ = precision_recall_fscore_support(validation_labels, predicted, average='binary')

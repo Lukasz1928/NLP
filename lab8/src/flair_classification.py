@@ -66,7 +66,7 @@ def classify(data, labels, test, train, validation):
 
     save_training_files(train_data, train_labels, test_data, test_labels, validation_data, validation_labels)
     corpus = NLPTaskDataFetcher.load_classification_corpus(Path('./'), test_file='test.txt', dev_file='dev.txt', train_file='train.txt')
-    word_embeddings = [FlairEmbeddings('multi-forward')]
+    word_embeddings = [WordEmbeddings('pl'), FlairEmbeddings('polish-forward'), FlairEmbeddings('polish-backward')]
     doc_embeddings = DocumentRNNEmbeddings(word_embeddings, hidden_size=512, reproject_words=True, reproject_words_dimension=256)
     classifier = TextClassifier(doc_embeddings, label_dictionary=corpus.make_label_dictionary(), multi_label=False)
     trainer = ModelTrainer(classifier, corpus)
