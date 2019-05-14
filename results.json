@@ -1,0 +1,68 @@
+{
+  "svm": {
+    "full_text": {
+      "accuracy": 0.895,
+      "recall": 0.965,
+      "f1": 0.928
+    },
+    "tenth_of_text": {
+      "accuracy": 0.81,
+      "recall": 0.908,
+      "f1": 0.856
+    },
+    "ten_lines_of_text": {
+      "accuracy": 0.801,
+      "recall": 0.915,
+      "f1": 0.854
+    },
+    "single_line_of_text": {
+      "accuracy": 0.655,
+      "recall": 0.78,
+      "f1": 0.712
+    }
+  },
+  "fasttext": {
+    "single_line_of_text": {
+      "accuracy": 0.717,
+      "f1": 0.74,
+      "recall": 0.765
+    },
+    "tenth_of_text": {
+      "accuracy": 0.848,
+      "f1": 0.853,
+      "recall": 0.859
+    },
+    "full_text": {
+      "accuracy": 0.901,
+      "f1": 0.939,
+      "recall": 0.98
+    },
+    "ten_lines_of_text": {
+      "accuracy": 0.839,
+      "f1": 0.839,
+      "recall": 0.839
+    }
+  },
+  "flair": {
+    "full_text": {
+      "accuracy": null,
+      "recall": null,
+      "f1": null
+    },
+    "tenth_of_text": {
+      "accuracy": null,
+      "recall": null,
+      "f1": null
+    },
+    "ten_lines_of_text": {
+      "accuracy": 0.582,
+      "recall": 0.944,
+      "f1": 0.72
+    },
+    "single_line_of_text": {
+      "accuracy": 0.612,
+      "recall": 0.569,
+      "f1": 0.59
+    }
+  }
+}
