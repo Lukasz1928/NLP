@@ -3,7 +3,7 @@ import time
 
 import requests
 
-user = 'Lukasz19281@gmail.com'  # TODO: remove!!!
+user = ''  # TODO: remove!!!
 
 
 def start_processing_file(text):
@@ -39,4 +39,6 @@ def get_processed(upload_ids):
                 results.append(get_result(r))
         for d in done:
             waiting.remove(d)
+        time.sleep(2)
+        print(len(waiting))
     return results
