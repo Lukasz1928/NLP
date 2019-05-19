@@ -3,16 +3,13 @@ import time
 
 import requests
 
-user = 'Lukasz19281@gmail.com'  # TODO: remove!!!
-i = 0
+user = 'xyz@xyz.xyz'
+
 
 def start_processing_file(text):
-    global i
     url = 'http://ws.clarin-pl.eu/nlprest2/base/startTask'
     resp = requests.post(url, data=json.dumps({'text': text, 'lpmn': 'any2txt|wcrft2|liner2({"model":"n82"})',
                                                'user': user}), headers={'Content-Type': 'application/json'})
-    print('{} uploaded'.format(i))
-    i += 1
     return resp.text
 
 
@@ -32,7 +29,7 @@ def get_result(fileID):
 def get_processed(upload_ids):
     waiting = set(upload_ids)
     results = []
-    time.sleep(10)  # wait for data to be processed
+    time.sleep(60)  # wait for data to be processed
     while len(waiting) > 0:
         done = set()
         for i in waiting:
@@ -42,6 +39,5 @@ def get_processed(upload_ids):
                 results.append(get_result(r))
         for d in done:
             waiting.remove(d)
-        time.sleep(2)
-        print(len(waiting))
+        time.sleep(30)
     return results
