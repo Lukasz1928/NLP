@@ -3,13 +3,16 @@ import time
 
 import requests
 
-user = ''  # TODO: remove!!!
-
+user = 'Lukasz19281@gmail.com'  # TODO: remove!!!
+i = 0
 
 def start_processing_file(text):
+    global i
     url = 'http://ws.clarin-pl.eu/nlprest2/base/startTask'
     resp = requests.post(url, data=json.dumps({'text': text, 'lpmn': 'any2txt|wcrft2|liner2({"model":"n82"})',
                                                'user': user}), headers={'Content-Type': 'application/json'})
+    print('{} uploaded'.format(i))
+    i += 1
     return resp.text
 
 
