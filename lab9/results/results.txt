@@ -1,4 +1,4 @@
-Most frequent named entites:
+Most frequent named entities:
 	('Dzieje_(Apostolskie) . u .', 423)
 	('rzeczpospolita polski', 154)
 	('minister obrona narodowy', 105)
@@ -50,7 +50,7 @@ Most frequent named entites:
 	('fundusz wyborczy', 12)
 	('ustawa z dzień 21 listopad 1967 r . o powszechny obowiązek obrona rzeczpospolita polski', 12)
 
-Most frequent named entites in each class:
+Most frequent named entities in each class:
 	nam_pro:
 		('Dzieje_(Apostolskie) . u .', 423)
 		('dziennik . u .', 75)

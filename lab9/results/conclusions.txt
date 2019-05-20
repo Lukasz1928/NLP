@@ -1,0 +1,12 @@
+1. Number of occurrences of each class, both coarse and fine, seems to follow the power law(Zipf's law),
+like number of occurrences of words in a text.
+2. Those frequencies are heavily influenced by domain of text, as opposed to word frequencies(or at least
+some most frequent words).
+3. Not all abbreviations are recognized correctly,
+    eg. 'Dz.' probably should not be changed to 'Dzieje_(Apostolskie)'.
+4. Some phrases are classified to wrong categories,
+    eg. 'grzyb' in 'nam_oth', 'północnoatlantycki' in 'nam_liv' or 'farmakopea polski' in 'nam_loc'.
+5. A few numbers has been classified,
+    eg. 'III'(probably a roman numeral), '11'.
+6. Some meaningless phrases are recognized,
+    eg. 'sekunda T a w a' or 'w'.

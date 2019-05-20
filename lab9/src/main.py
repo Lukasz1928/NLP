@@ -20,17 +20,17 @@ def main():
 
     # frequencies of classes
     frequencies = calculate_frequencies(parsed)
-    plot_frequencies(frequencies, 'occurences', 'fine-grained class frequencies', 'fine')
+    plot_frequencies(frequencies, 'occurrences', 'fine-grained class frequencies', 'fine')
     coarse_frequencies = calculate_coarse_frequencies(frequencies)
-    plot_frequencies(coarse_frequencies, 'occurences', 'fine-grained class frequencies', 'coarse')
+    plot_frequencies(coarse_frequencies, 'occurrences', 'fine-grained class frequencies', 'coarse')
 
     # most frequent phrases
     total_frequencies, class_frequencies = calculate_most_frequent(parsed)
     with open('results/results.txt', 'w+', encoding='utf-8') as f:
-        f.write('Most frequent named entites:\n')
+        f.write('Most frequent named entities:\n')
         for t in total_frequencies:
             f.write('\t{}\n'.format(t))
-        f.write('\nMost frequent named entites in each class:\n')
+        f.write('\nMost frequent named entities in each class:\n')
         for k, v in class_frequencies.items():
             f.write('\t{}:\n'.format(k))
             for _v in v:
