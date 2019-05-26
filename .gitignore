@@ -128,4 +128,5 @@ lab8/data/*.txt
 lab9/data/*.txt
 lab9/data/parsed/*.txt
 # lab10
-# no data
+lab10/data/*
+!lab10/data/.gitignore

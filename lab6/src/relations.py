@@ -35,26 +35,41 @@ def get_word_id(word, word_id):
 
 
 def find_relations_in_group(words):
-    word2id = {}
+    word2id = {w: None for w in words}
     id2word = {}
     for w in words:
-        word_id = get_word_id(w[0], word_id=w[1])
-        word2id[w] = word_id
-        id2word[word_id] = w
+        try:
+            word_id = get_word_id(w[0], word_id=w[1])[0]
+        except IndexError:
+            pass
+        else:
+            word2id[w] = word_id
+            id2word[word_id] = w
 
     graph_vertices = set(words)
     graph_edges = set()
     edge_labels = {}
 
-    for w in words:
+    print(graph_vertices)
+
+    for w in id2word.values():
         rels, labels = get_word_relations(word2id[w])
+        print(rels)
         for r in rels:
             if r[1] in word2id.values():
-                graph_edges.add(r)
-                edge_labels[r] = labels[r]
+                try:
+                    named_r = (id2word[r[0]], id2word[r[1]])
+                except KeyError:
+                    pass
+                else:
+                    graph_edges.add(named_r)
+                    edge_labels[named_r] = labels[r]
 
     g = networkx.DiGraph()
-    g.add_node(graph_vertices)
+    g.add_nodes_from(graph_vertices)
+    g.add_edges_from(graph_edges)
+    pos = networkx.spring_layout(g)
     plt.subplot(121)
-    networkx.draw(g, with_labels=True, font_size=8)
+    networkx.draw(g, pos, edge_labels=edge_labels, with_labels=True, font_size=8)
+    networkx.draw_networkx_edge_labels(g, pos, edge_labels=edge_labels, with_labels=True, font_size=8)
     plt.show()
