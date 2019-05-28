@@ -1,7 +1,6 @@
 import math
 from collections import deque
 
-from src.meanings import get_meaning_and_synonyms
 from src.relations import get_word_id, get_word_relations
 
 

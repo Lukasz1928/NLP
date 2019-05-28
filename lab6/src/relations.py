@@ -1,4 +1,3 @@
-import matplotlib
 import networkx
 import requests
 import matplotlib.pyplot as plt
