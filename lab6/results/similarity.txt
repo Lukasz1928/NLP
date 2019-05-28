@@ -1,0 +1,4 @@
+Leacock-Chodorow similarity measure:
+('szkoda', 2), ('wypadek', 1) -> 2.0794415416798357
+('kolizja', 2), ('szkoda majątkowa', 1) -> 1.5686159179138452
+('nieszczęście', 2), ('katastrofa budowlana', 1) -> 1.3862943611198906

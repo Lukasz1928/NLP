@@ -14,18 +14,22 @@ def get_word_relations(word_id):
     rels = set()
     labels = {}
     senses = requests.get(get_url('senses/{}'.format(word_id))).json()
+    if senses['language'] != 'pl_PL':
+        return None, None
     rels_out = senses['outgoing']
     rels_in = senses['incoming']
     for r in rels_in:
         relation = get_relation(r['relation_id'])
-        for s in r['senses']:
-            rels.add((s['id'], word_id))
-            labels[(s['id'], word_id)] = relation
+        if relation in ['hiponimia', 'hiperonimia']:
+            for s in r['senses']:
+                rels.add((s['id'], word_id))
+                labels[(s['id'], word_id)] = relation
     for r in rels_out:
         relation = get_relation(r['relation_id'])
-        for s in r['senses']:
-            rels.add((word_id, s['id']))
-            labels[(word_id, s['id'])] = relation
+        if relation in ['hiponimia', 'hiperonimia']:
+            for s in r['senses']:
+                rels.add((word_id, s['id']))
+                labels[(word_id, s['id'])] = relation
     return rels, labels
 
 
