@@ -10,3 +10,11 @@ Direct hyponyms of ('wypadek', 1) word:
 	('karambol', 1)
 	('kolizja', 2)
 	('zderzenie', 2)
+
+Second order hyponyms of ('wypadek', 1) word:
+	('obwał', 1)
+	('wypadek drogowy', 1)
+	('kolizja drogowa', 1)
+	('czołówka', 9)
+	('stłuczka', 1)
+	('dzwon', 3)
